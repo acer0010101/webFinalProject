@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="${message}"></h1>
+<a th:href="@{}">有一点东西</a>
+<a th:hreb="@{}">有点东西</a>
+<form th:action="@{/test/upload}" method="post" enctype="multipart/form-data">
+    头像：<input type="file" name="photo"><br>
+    <input type="submit" value="上传">
+</form>
+
+</body>
+</html>

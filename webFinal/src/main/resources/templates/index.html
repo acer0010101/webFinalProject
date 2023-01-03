@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+</head>
+<body>
+<h1 th:text="${message}"></h1>
+<a th:hreb="@{/test/showIcon}">你好，用户</a>
+<form th:action="@{/test/submitComment}" method="post">
+    输入留言内容：<br>
+    <input type="text" placeholder="在此处输入留言" style="height:60px;" size="100" formenctype="text/plain"><br>
+    <input type="submit" value="提交留言">
+</form>
+<form th:action="@{/test/upload}" method="post" enctype="multipart/form-data">
+    相片上传<input type="file" name="photo"><br>
+    <input type="submit" value="上传">
+</form>
+<br>
+<button onclick="@{/forward}">点击按钮跳转到留言页面</button>
+</body>
+</html>

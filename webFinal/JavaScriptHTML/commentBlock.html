@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>用户留言板</h1>
+<div>你好，用户</div>
+<div>
+    请输入留言内容：<br>
+    <textarea cols="100" rows="5" placeholder="在此输入文字"></textarea>
+    <button onclick="@{/test/submitComment}">提交留言</button>
+</div>
+<hr>
+<div>
+    <li id="li">
+        <!-- <ol><button></ol>
+        <ol>2</ol>
+        <ol>3</ol>
+        <ol>4</ol>
+        <ol>5</ol> -->
+    </li>
+</div>
+<h1>留言记录</h1>
+<div>以下是您的过往留言</div>
+</body>
+
+<script type="text/javascript">
+    var input = document.getElementById("input");
+    var li = document.getElementById("li");
+    var i = 1;
+    function add() {
+        var ol = document.createElement("ol");
+        if (input.value != "") {
+            ol.innerHTML=m+".   " + input.value + '<button oneclick="del(this);">删除</button>';
+            li.appendChild(ol);
+            input.value = "";
+            m++;
+        } else {
+            alear("输入内容为空!!");
+        }
+    }
+    function del(btn) {
+        val ol = btn.parentNode;
+        li.removeChild(ol);
+    }
+</script>
+
+</html>
